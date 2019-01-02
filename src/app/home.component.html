@@ -1,3 +1,10 @@
+<div class="page-header">
+  <a class="setting-img" routerLink="/settings">
+    <img border="0"  src="./assets/Configure.png"
+         style="position: absolute" width="30" height="30">
+  </a>
+  <h1 style="text-align: -webkit-center"> Список покупок {{listname}} </h1>
+</div>
 <div class="panel">
   <div class="form-inline" data-ng-controller="ShopController">
     <div class="form-group">
@@ -24,22 +31,23 @@
   <div>
     <h3> Всего покупок {{ items.length}}</h3>
   </div>
-  <table class="bordered">
+  <table class="table table-hover">
     <thead>
     <tr>
-      <th>Предмет</th>
+      <th>Куплено</th>
+      <th>Товар</th>
       <th>Цена</th>
       <th>Количество</th>
-      <th>Куплено</th>
+
       <th></th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let item of items">
+      <td><input type="checkbox" [(ngModel)]="item.done" /></td>
       <td>{{item.purchase}}</td>
       <td>{{item.price}}</td>
       <td>{{item.count}}</td>
-      <td><input type="checkbox" [(ngModel)]="item.done" /></td>
       <td><button class="btn btn-default" type="button" (click)="DeleteItem(item)"> удалить</button></td>
     </tr>
     </tbody>

@@ -74,3 +74,23 @@
   border-radius: 0 0 6px 0;
 }
 
+.setting-img img{
+  !important position: absolute;
+}
+
+.image-list-banner {
+  background-position: center -30px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 9.375rem;
+}
+.image-list-banner--sns {
+  background-image: url(../assets/settings_font.jpeg);
+}
+.h-white {
+  color: white !important;
+}
+.h-center, .l-flex-lto__list, .l-offers__list, .l-offers__redeem {
+  margin: 0 auto;
+  text-align: center;
+}

@@ -1,6 +1,7 @@
 import {Component, Injectable} from '@angular/core';
 import {ItemsService} from './items.service';
-import {Item} from './Item';
+import {List} from './List';
+
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ import {Item} from './Item';
 
 export class HomeComponent  {
 
-
+  listname = (localStorage.getItem('name'));
   constructor(private itemservice: ItemsService) {
   }
 
