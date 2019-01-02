@@ -20,7 +20,12 @@ const appRoutes: Routes = [
 @NgModule({
   imports:      [ BrowserModule, FormsModule, RouterModule.forRoot(appRoutes) ],
   declarations: [ AppComponent, SettingsComponent, HomeComponent ],
-  bootstrap:    [ AppComponent, HomeComponent, SettingsComponent ]
+  bootstrap:    [ AppComponent, HomeComponent, SettingsComponent ],
+  providers: [  { provide: 'LOCALSTORAGE', useFactory: getLocalStorage }
+  ]
 })
 export class AppModule { }
 
+export function getLocalStorage() {
+  return (typeof window !== 'undefined') ? window.localStorage : null;
+}

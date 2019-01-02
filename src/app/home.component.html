@@ -1,5 +1,5 @@
 <div class="panel">
-  <div class="form-inline">
+  <div class="form-inline" data-ng-controller="ShopController">
     <div class="form-group">
       <div class="col-md-8">
         <input class="form-control" [(ngModel)]="text" placeholder = "Название" />
@@ -22,7 +22,7 @@
     </div>
   </div>
   <div>
-    <h3> Всего покупок {{items.length}}</h3>
+    <h3> Всего покупок {{ items.length}}</h3>
   </div>
   <table class="bordered">
     <thead>
@@ -31,6 +31,7 @@
       <th>Цена</th>
       <th>Количество</th>
       <th>Куплено</th>
+      <th></th>
     </tr>
     </thead>
     <tbody>
@@ -39,7 +40,10 @@
       <td>{{item.price}}</td>
       <td>{{item.count}}</td>
       <td><input type="checkbox" [(ngModel)]="item.done" /></td>
+      <td><button class="btn btn-default" type="button" (click)="DeleteItem(item)"> удалить</button></td>
     </tr>
     </tbody>
   </table>
 </div>
+
+

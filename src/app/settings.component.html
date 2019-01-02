@@ -4,18 +4,10 @@
       <input class="form-control" [(ngModel)]="text" placeholder = "Название списка" />
 
   </div>
-  <div class="form-group">
 
-      <input type="number" class="form-control" [(ngModel)]="price" placeholder="Цена" />
-
-  </div>
-  <div class="form-group">
-
-      <input type="number" class="form-control" [(ngModel)]="count" placeholder="Количество" />
-
-  </div>
   <div class="form-group">
 
       <button class="btn btn-default" (click)="addItem(text, price, count)">Добавить</button>
+      <button class="btn btn-default" (click)="ClearList()">Очистить список</button>
 
   </div>
